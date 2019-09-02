@@ -1,6 +1,6 @@
 #141
-import hello_func
-import greeting_func
+from 모듈 import greeting_func, hello_func
+
 
 def main():
     print("insa_func 모듈입니다.")
