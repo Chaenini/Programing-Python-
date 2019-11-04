@@ -7,9 +7,20 @@ class GameManager:
 
     def play(self):
         print(self.ttt)
-        self.ttt.set(1, 1)
-        print(self.ttt)
-
+        while True :
+            row = int(input("row : "))
+            col = int(input("col : "))
+            self.ttt.set(row,col)
+            print(self.ttt)
+            if self.ttt.check_winner() == "O" :
+                print("O win !!!")
+                break
+            elif self.ttt.check_winner() == "X":
+                print("X win !!!")
+                break
+            elif self.ttt.check_winner() == "d":
+                print("무승부")
+                break
 
 if __name__ == '__main__':
     gm = GameManager()

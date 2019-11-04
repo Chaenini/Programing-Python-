@@ -1,7 +1,7 @@
 class TicTacToe :
     def __init__(self) :
-        self.board = ["." , ".", ".", \
-                      ".", ".", ".", \
+        self.board = [".", ".", ".",\
+                      ".", ".", ".",\
                       ".", ".", "."]
         self.current_turn = "X"
 
@@ -33,7 +33,7 @@ class TicTacToe :
             return check
 
         # / 대각선
-        elif self.get(0,20) == self.get(1,1) == self.get(2,0) == check :
+        elif self.get(0,2) == self.get(1,1) == self.get(2,0) == check :
             return check
 
         #무승부
