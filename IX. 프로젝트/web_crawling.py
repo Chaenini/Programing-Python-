@@ -8,9 +8,12 @@ from urllib.request import urlopen
 if __name__ == '__main__' :
         # 네이버 웹툰 > 간떨어지는 동거 제목 가져오기
         data = urlopen("https://comic.naver.com/webtoon/list.nhn?titleId=699415&weekday=thu")
-        soup = BeautifulSoup(data, "lxml")
+        soup = BeautifulSoup(data, "lxml")  # httpResponse -> HTML
 
-        cartoon_titles = soup.find_all("td", attrs={"class": "title"})
-        for cartoon_title in cartoon_titles:
-            title = cartoon_title.find("a").text
-            print(title)ㅈ
+        cartoon_titles = soup.find_all("td", attrs={"class": "title"})  # <td class = "title"> ... </td>
+        for cartoon_title in cartoon_titles:    # cartoon_titles[:2] - 최근꺼 2개만 보기
+            title = cartoon_title.find("a").text    # <a> text </a> - 텍스트 가져오기
+            link = cartoon_title.find("a").get("href")  # <a href = ""> text </a> - 테그의 속성값 가져오기
+            link = "https://comic.naver.com"+link
+            print(title)
+            print(link)
