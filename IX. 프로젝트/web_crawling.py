@@ -22,5 +22,7 @@ if __name__ == '__main__' :
         html += "</body></html>"
         # print(html)
 
+        outputsoup = BeautifulSoup(html, "lxml")    # 내가 생성한 html 문자열을 soup 객체로 만들기
+        prettyHtml = str(outputsoup.prettify())     # 예쁘게 html 코드 만들기
         with open("간떨어지는동거.html","w",encoding="utf-8") as f :   # html파일 만들기
-            f.write(html)
+            f.write(prettyHtml)
