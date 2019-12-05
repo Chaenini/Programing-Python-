@@ -1,5 +1,6 @@
 # pip install beautifulsoap4
 # pip install LxmL
+
 from urllib.request import urlopen
 import json
 
@@ -23,7 +24,7 @@ if __name__ == '__main__' :
 
             url = cartoon_title["id"]
             url = "http://webtoon.daum.net/webtoon/viewer/"+str(url)
-            html += "<a href='{}'><img src = '{}' />{}</a>".format(url,thumbnail,title)
+            html += "<a href='{}'><img src = '{}' />{}</a>".format  (url,thumbnail,title)
 
         html += "</body></html>"
 
